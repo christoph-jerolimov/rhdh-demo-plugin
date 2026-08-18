@@ -116,9 +116,11 @@ jobs:
 
     strategy:
       matrix:
-        plugin:
-          - todo
-          - todo-backend
+        include:
+          - plugin: todo
+            image: rhdh-demo-plugin
+          - plugin: todo-backend
+            image: rhdh-demo-backend-plugin
       fail-fast: false
 
     steps:
@@ -143,10 +145,10 @@ jobs:
           sudo apt-get update
           sudo apt-get -y install podman
 
-      - run: npx -y @red-hat-developer-hub/cli@1.10.x plugin package --tag rhdh-${{ matrix.plugin }}-demo-plugin:latest
+      - run: npx -y @red-hat-developer-hub/cli@1.10.x plugin package --tag ${{ matrix.image }}:latest
         working-directory: plugins/${{ matrix.plugin }}
 
       - name: Push to GitHub Container Registry
         run: |
           echo ${{ github.token }} | podman login ghcr.io -u ${{ github.actor }} --password-stdin
-          podman push rhdh-${{ matrix.plugin }}-demo-plugin:latest ghcr.io/${{ github.repository_owner }}/rhdh-${{ matrix.plugin }}-demo-plugin:latest
+          podman push ${{ matrix.image }}:latest ghcr.io/${{ github.repository_owner }}/${{ matrix.image }}:latest

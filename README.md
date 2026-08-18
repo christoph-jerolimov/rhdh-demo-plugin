@@ -77,9 +77,9 @@ Container image with all plugins:
 
 ```yaml
 plugins:
-  - package: oci://ghcr.io/christoph-jerolimov/rhdh-demo-plugins!internal-backstage-plugin-todo
+  - package: oci://ghcr.io/christoph-jerolimov/rhdh-demo-plugins!internal-rhdh-demo-plugin
     disabled: false
-  - package: oci://ghcr.io/christoph-jerolimov/rhdh-demo-plugins!internal-backstage-plugin-todo-backend
+  - package: oci://ghcr.io/christoph-jerolimov/rhdh-demo-plugins!internal-rhdh-demo-backend-plugin
     disabled: false
 ```
 
@@ -87,8 +87,8 @@ Individual plugin images:
 
 ```yaml
 plugins:
-  - package: oci://ghcr.io/christoph-jerolimov/rhdh-todo-demo-plugin
+  - package: oci://ghcr.io/christoph-jerolimov/rhdh-demo-plugin
     disabled: false
-  - package: oci://ghcr.io/christoph-jerolimov/rhdh-todo-backend-demo-plugin
+  - package: oci://ghcr.io/christoph-jerolimov/rhdh-demo-backend-plugin
     disabled: false
 ```
