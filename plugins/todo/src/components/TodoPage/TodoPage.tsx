@@ -56,8 +56,8 @@ function useTodos() {
       await createTodo({ title: 'Yet another example todo item' });
       await createTodo({ title: 'Last example todo item' });
 
-      const response = await fetch(`plugin://todo/todos`);
-      const updatedData = await response.json();
+      const updatedResponse = await fetch(`plugin://todo/todos`);
+      const updatedData = await updatedResponse.json();
       return updatedData.items;
     }
 

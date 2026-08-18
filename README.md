@@ -8,10 +8,10 @@ It is adapted for a standalone plugin repository.
 
 ## Plugins
 
-| Plugin | Role | Description |
-| --- | --- | --- |
-| `plugins/todo` | Frontend | UI for displaying todo items, built with `@backstage/frontend-plugin-api` and `@backstage/ui` |
-| `plugins/todo-backend` | Backend | REST API for todo items using Express, with Zod request validation |
+| Plugin                 | Role     | Description                                                                                   |
+| ---------------------- | -------- | --------------------------------------------------------------------------------------------- |
+| `plugins/todo`         | Frontend | UI for displaying todo items, built with `@backstage/frontend-plugin-api` and `@backstage/ui` |
+| `plugins/todo-backend` | Backend  | REST API for todo items using Express, with Zod request validation                            |
 
 ## Tooling
 
